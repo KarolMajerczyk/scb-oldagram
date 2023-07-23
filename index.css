@@ -12,6 +12,7 @@
 
   --fs-300: 12px;
   --fs-400: 13px;
+  --fs-500: 16px;
 }
 
 *,
@@ -93,6 +94,7 @@ body {
 
 .post {
   background: var(--clr-primary-100);
+  cursor: pointer;
 }
 
 .post > * {
@@ -130,4 +132,12 @@ body {
 
 .post-icons img:hover {
   transform: scale(1.2);
+}
+
+.likes {
+  transition: all 0.2s ease;
+}
+
+.scaled {
+  font-size: var(--fs-500);
 }

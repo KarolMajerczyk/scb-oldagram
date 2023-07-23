@@ -33,9 +33,17 @@ const postsEl = document.querySelector(".posts");
 
 postsEl.addEventListener("dblclick", function (e) {
   if (e.target.tagName !== "IMG") {
-    const likesEl = e.target.querySelector(".current-likes");
-    let currentLikes = Number(likesEl.textContent);
-    likesEl.textContent = currentLikes + 1;
+    const likesEl = e.target.querySelector(".likes");
+    const likesCountEl = e.target.querySelector(".likes-count");
+
+    const currentLikes = Number(likesCountEl.textContent);
+    likesCountEl.textContent = currentLikes + 1;
+
+    likesEl.classList.add("scaled");
+
+    likesEl.addEventListener("transitionend", () => {
+      likesEl.classList.remove("scaled");
+    });
   }
 });
 
@@ -66,8 +74,8 @@ function createPostEl(post) {
           <img src="images/icon-comment.png" alt="" />
           <img src="images/icon-dm.png" alt="" />
         </div>
-        <p class="text-bold">
-          <span class="current-likes">${post.likes}</span> likes
+        <p class="likes text-bold">
+          <span class="likes-count">${post.likes}</span> likes
         </p>
         <p>
           <span class="text-bold">${post.username}</span> ${post.comment}
