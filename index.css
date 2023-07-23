@@ -58,7 +58,7 @@ body {
 }
 
 .container {
-  width: 375px;
+  max-width: 375px;
   margin: 0 auto;
   background: var(--clr-primary-100);
 }
@@ -69,10 +69,11 @@ body {
   border-radius: 50%;
 }
 
-.header-container {
+.app-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 20px;
 
   padding: 15px;
   border-bottom: 1px solid var(--clr-primary-300);

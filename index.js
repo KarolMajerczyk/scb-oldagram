@@ -32,9 +32,11 @@ const posts = [
 const postsEl = document.querySelector(".posts");
 
 postsEl.addEventListener("dblclick", function (e) {
-  const likes = e.target.querySelector(".current-likes");
-  let currentLikes = Number(likes.textContent);
-  likes.textContent = currentLikes + 1;
+  if (e.target.tagName !== "IMG") {
+    const likesEl = e.target.querySelector(".current-likes");
+    let currentLikes = Number(likesEl.textContent);
+    likesEl.textContent = currentLikes + 1;
+  }
 });
 
 window.addEventListener("load", function () {
